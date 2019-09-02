@@ -55,6 +55,8 @@ bindkey "\e[F" end-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
+tput smkx
+
 case "$TERM" in
 rxvt*)
 	$HOME/bin/motd.sh
