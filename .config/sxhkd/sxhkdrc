@@ -1,0 +1,97 @@
+#
+#bspwm hotkeys
+#
+
+super + shift + e
+ pkill polybar;pkill conky;bspc quit
+
+super + shift + q
+ bspc node -c
+
+super + m
+ bspc desktop -l next
+
+super + b
+ bspc desktop -B
+
+super + z
+ $HOME/.config/sxhkd/gapinc.sh
+super + shift + z
+ $HOME/.config/sxhkd/gapdec.sh
+
+# set the window state
+super + {_,shift + }t
+       bspc node -t {floating,tiled}
+
+super + f
+ bspc node -t fullscreen
+
+super + {grave,Tab}
+ bspc {node,desktop} -f last
+
+super + apostrophe
+ bspc node -s last
+
+super + {o,i}
+ bspc control --record-history off; \
+ bspc node {older,newer} -f; \
+ bspc control --record-history on
+
+super + y
+ bspc node -w last.manual
+
+super + v
+ bspc node -s biggest
+
+super + {_,shift + }{h,j,k,l}
+ bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{a,s,w,d} 
+ bspc node -{f,s} {west,south,north,east}
+
+super + {comma,period}
+ bspc desktop -C {backward,forward}
+
+super + bracket{left,right}
+ bspc desktop -f {prev,next}
+
+super + ctrl + {h,j,k,l}
+ bspc node -p {west,south,north,east}
+
+super + ctrl + {a,s,w,d}
+ bspc node -p {west,south,north,east}
+
+super + ctrl + {_,shift + }space
+ bspc {node -p cancel,desktop -c}
+
+alt + super + {h,j,k,l}
+ bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+alt + super + shift + {h,j,k,l}
+ bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + ctrl + {1-9}
+ bspc node -r 0.{1-9}
+
+super + {_,shift + }{1-9,0}
+ bspc {desktop -f,node -d} ^{1-9,10}
+
+#
+# wm independent hotkeys
+#
+
+super + {_,shift + } Return
+ {st -e fish,xterm -en en_US.UTF-8}
+
+super + p
+ dmenu_run -fn "Hack:pixelsize=13" -sb "#51819d" -nb "#0c1013"
+
+super + x
+ rofi -show combi
+
+super + c
+ /usr/local/bin/firefox
+
+# make sxhkd reload its configuration files:
+super + r
+ pkill -USR1 -x sxhkd
