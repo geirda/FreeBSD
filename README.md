@@ -1,2 +1,2 @@
 # FreeBSD
-config files for FreeBSD
+dotfiles for FreeBSD
