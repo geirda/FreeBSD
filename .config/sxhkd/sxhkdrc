@@ -3,7 +3,7 @@
 #
 
 super + shift + e
- pkill dzconky;pkill conky;bspc quit
+ pkill polybar;pkill conky;bspc quit
 
 super + shift + q
  bspc node -c
@@ -76,21 +76,8 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
  bspc {desktop -f,node -d} ^{1-9,10}
 
-#~button1
-# bspc pointer -g focus
-
-#super + button{1-3}
-# ; bspc pointer -g {move,resize_side,resize_corner}
-
-#super + @button{1-3}
-# bspc pointer -u
-
-#
-# wm independent hotkeys
-#
-
 super + Return
- st -e fish
+ st
 
 super + p
  dmenu_run -fn "Hack:pixelsize=13" -sb "#51819d" -nb "#0c1013"
@@ -98,22 +85,8 @@ super + p
 super + x
  rofi -show combi
 
-#Volume Control
-#XF86AudioLowerVolume
-# amixer set Master 5%-
-#XF86AudioRaiseVolume
-# amixer set Master 5%+
-#XF86AudioMute
-#        amixer set Master toggle
-
-#Brightness control
-#XF86MonBrightnessDown
-# xbacklight -dec 5
-#XF86MonBrightnessUp
-# xbacklight -inc 5
-
 super + c
  /usr/local/bin/firefox
 # make sxhkd reload its configuration files:
 super + r
-pkill -USR1 -x sxhkd
+ pkill -USR1 -x sxhkd
