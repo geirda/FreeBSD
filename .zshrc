@@ -13,18 +13,55 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Own adjustments
+# Make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        emulate -L zsh
+        printf '%s' ${terminfo[smkx]}
+    }
+    function zle-line-finish () {
+        emulate -L zsh
+        printf '%s' ${terminfo[rmkx]}
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
+
+# Shell prompt and colors
+POWERLEVEL9K_COLOR_SCHEME='dark'
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='236'
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='10'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='12'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='12'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='12'
+POWERLEVEL9K_STATUS_OK_BACKGROUND='8'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='11'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='8'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='10'
+POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS='0.05'
+POWERLEVEL9K_VI_INSERT_MODE_STRING='INSERT'
+POWERLEVEL9K_VI_COMMAND_MODE_STRING='NORMAL'﻿
+
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-PS1='%B%F{green}%n@%m %B%F{blue}%~%F{reset}%b> '
-#PS1=$'\e[1;32m%n@%m \e[1;34m%1~\e[00m> '
+
+case "$TERM" in
+st*)
+	source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+	;;
+*)
+	PS1='%B%F{green}%n@%m %B%F{blue}%~%F{reset}%b> '
+	;;
+esac
+
 export LSCOLORS=ExGxBxDxCxefedhbagacad
 
 # Aliases
 alias l='ls'
-alias la='ls -A'
-alias ll='ls -lp'
-alias ls='ls --color'
+alias la='ls -a'
+alias ll='ls -l'
+alias ls='exa --group-directories-first'
 alias 'rm=rm -i'
 alias 'mv=mv -i'
 alias 'cp=cp -i'
@@ -52,15 +89,8 @@ bindkey "\eOF" end-of-line
 # for freebsd console
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
+bindkey "^[[3~" delete-char
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
-tput smkx
-
-case "$TERM" in
-rxvt*)
-	$HOME/bin/motd.sh
-	;;
-*)
-	;;
-esac
+fortune
