@@ -115,7 +115,7 @@ format-padding = 0
 
 [module/ip]
 type = custom/script
-exec = echo "IP: $(ifconfig em0 | awk '/inet /{ print $2 }')"
+exec = echo "IP: $(ifconfig | awk '/ broadcast /{ print $2 }')"
 label-padding = 1
 format = <label>
 format-foreground = ${colors.color15}
