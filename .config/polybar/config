@@ -95,7 +95,7 @@ label-padding = 4
 
 [module/ramuse]
 type = custom/script
-exec = echo "RAM use: $(top -d 1|grep Mem|awk '{ print $2 }')B"
+exec = echo "RAM use: $(top -d 1|awk '/Mem/{ print $2 }')B"
 label-padding = 1
 format = <label>
 interval = 5.0
