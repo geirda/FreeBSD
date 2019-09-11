@@ -14,14 +14,12 @@ super + m
 super + b
  bspc desktop -B
 
-super + z
- $HOME/bin/gapinc.sh
-super + shift + z
- $HOME/bin/gapdec.sh
+super + {_,shift + }z
+ $HOME/.config/sxhkd/gap{inc,dec}.sh
 
 # set the window state
 super + {_,shift + }t
-       bspc node -t {floating,tiled}
+ bspc node -t {floating,tiled}
 
 super + f
  bspc node -t fullscreen
