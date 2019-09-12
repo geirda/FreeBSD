@@ -1,6 +1,7 @@
-include ~/.nano/*.nanorc
+#include "/usr/local/share/nano/*.nanorc"
+include "~/.nano/*.nanorc"
 set linenumbers
-set nowrap
+set softwrap
 set titlecolor brightwhite,blue
 set statuscolor brightwhite,cyan
 set errorcolor brightwhite,red
