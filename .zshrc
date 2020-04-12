@@ -7,7 +7,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle ':completion:*' list-colors ''
-#zstyle :compinstall filename '$HOME/geir/.zshrc'
+#zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
