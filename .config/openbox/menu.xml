@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <item label="Firefox" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/firefox.svg">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="File Manager" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/xfce-filemanager.svg">
+    <action name="Execute">
+      <command>pcmanfm /home/geir</command>
+      <startupnotify><enabled>yes></enabled></startupnotify>
+    </action>
+  </item>
+  <separator />
+  <separator label="Terminals" />
+  <item label="Terminal" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/terminal.svg">
+    <action name="Execute">
+      <command>st</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Rxvt Unicode" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/terminus.svg">
+    <action name="Execute">
+      <command>urxvt</command>
+    </action>
+  </item>
+  <item label="UXTerm" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/terminology.svg">
+    <action name="Execute">
+      <command>uxterm</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Xterm" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/xterm.svg">
+    <action name="Execute"><command>xterm</command></action>
+  </item>
+  <separator />
+  <separator label="Configuration" />
+  <item label="Openbox Configuration" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/preferences-desktop-tweaks.svg">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Reload Openbox" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/gconf-editor.svg">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Preferred Applications" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/preferences-desktop-default-applications.svg">
+    <action name="Execute">
+      <command>libfm-pref-apps</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Look and Feel" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/preferences-desktop-theme-global.svg">
+    <action name="Execute">
+      <command>lxappearance</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Change Wallpaper" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/preferences-desktop-wallpaper.svg">
+    <action name="Execute">
+      <command>nitrogen</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Log Out" icon="/usr/local/share/icons/Papirus-Dark/16x16/categories/system-shutdown.svg">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>

@@ -1,0 +1,2 @@
+^sep()
+Logout,openbox --exit,system-log-out

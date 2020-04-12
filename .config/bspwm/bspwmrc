@@ -36,5 +36,6 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Firefox desktop='^2' follow=on
 
-polybar top &
+polybar -c $HOME/.config/polybar/bspwmconfig top &
+tilda --hidden -g $HOME/.config/tilda/config_0 &
 urxvtd -q -o -f &

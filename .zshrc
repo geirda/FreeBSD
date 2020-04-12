@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd beep extendedglob nomatch notify
@@ -7,7 +7,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle ':completion:*' list-colors ''
-zstyle :compinstall filename '/usr/home/geir/.zshrc'
+#zstyle :compinstall filename '$HOME/geir/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -49,16 +49,55 @@ POWERLEVEL9K_VI_COMMAND_MODE_STRING='NORMAL'﻿
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_CHAR_SYMBOL=❯
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_HG_SHOW=false
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_NODE_SHOW=false
+SPACESHIP_RUBY_SHOW=false
+SPACESHIP_ELM_SHOW=false
+SPACESHIP_ELIXIR_SHOW=false
+SPACESHIP_XCODE_SHOW_LOCAL=false
+SPACESHIP_SWIFT_SHOW_LOCAL=false
+SPACESHIP_GOLANG_SHOW=false
+SPACESHIP_PHP_SHOW=false
+SPACESHIP_RUST_SHOW=false
+SPACESHIP_JULIA_SHOW=false
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_DOCKER_CONTEXT_SHOW=false
+SPACESHIP_AWS_SHOW=false
+SPACESHIP_CONDA_SHOW=false
+SPACESHIP_VENV_SHOW=false
+SPACESHIP_PYENV_SHOW=false
+SPACESHIP_DOTNET_SHOW=false
+SPACESHIP_EMBER_SHOW=false
+SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_TERRAFORM_SHOW=false
+SPACESHIP_TERRAFORM_SHOW=false
+SPACESHIP_VI_MODE_SHOW=false
+SPACESHIP_JOBS_SHOW=false
+
 case "$TERM" in
-st*)
-	source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+rxvt*)
+	SPACESHIP_CHAR_SYMBOL=">"
 	;;
-*)
-	PS1='%B%F{green}%n@%m %B%F{blue}%~%F{reset}%b> '
+xterm*)
+	SPACESHIP_CHAR_SYMBOL="$"
 	;;
 esac
 
-export LSCOLORS=ExGxBxDxCxefedhbagacad
+source ~/.zsh/spaceship-prompt/spaceship.zsh
+
+#case "$TERM" in
+#st*)
+#	source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+#	;;
+#*)
+#	PS1='%B%F{green}%n@%m %B%F{blue}%~%F{reset}%b> '
+#	;;
+#esac
 
 # Aliases
 alias l='ls'
@@ -96,4 +135,13 @@ bindkey "^[[3~" delete-char
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+pfetch
 fortune

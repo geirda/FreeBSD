@@ -1,0 +1,12 @@
+# start compositor
+compton --config $HOME/.config/compton.conf &
+
+# load wallpaper
+nitrogen --restore &
+
+# start the panel
+polybar openbox-bar &
+
+# start urxvt daemon
+urxvtd -q -o -f &
+tilda --hidden -g $HOME/.config/tilda/config_0 &

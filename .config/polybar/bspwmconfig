@@ -1,0 +1,189 @@
+[colors]
+foreground = #a7a7a7
+background = #0c1013
+
+color0 = #1c2023
+color1 = #a54242
+color2 = #8c9440
+color3 = #de935f
+color4 = #5f819d
+color5 = #85678f
+color6 = #5e8d87
+color7 = #c5c8c6
+color8 = #3c4043
+color9 = #cc6666
+color10 = #b5bd68
+color11 = #f0c674
+color12 = #81a2be
+color13 = #b294bb
+color14 = #8abeb7
+color15 = #e1e1e1
+
+[bar/top]
+width = 100%
+height = 19
+offset-x = 0
+offset-y = 0
+;bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+underline-size = 1
+underline-color = ${colors.color4}
+
+spacing = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = UbuntuMono:size=11;2
+font-1 = Hack:size=11;2
+font-2 = UbuntuMono Nerd font:size=11;2
+
+modules-left = bspwm xwindow
+modules-center =
+modules-right = pad0 pad1 pad2 ramuse pad3 pad4 diskuse pad5 pad6 ip pad7 pad8 date
+
+;tray-position = right
+;tray-padding = 2
+;tray-background = #66333333
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+; MODULES
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = term;
+ws-icon-1 = web;
+ws-icon-2 = chat;
+ws-icon-3 = code;
+ws-icon-4 = music;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-default = []
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.color8}
+label-focused-foreground = ${colors.color15}
+label-focused-underline = ${colors.color4}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = #44ffffff
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:120:...%
+label-padding = 4
+
+[module/ramuse]
+type = custom/script
+exec = echo "RAM use: $(top -d 1|awk '/Mem/{ print $2 }')B"
+label-padding = 1
+format = <label>
+interval = 5.0
+format-foreground = ${colors.color15}
+label-background = ${colors.color2}
+format-padding = 0
+
+[module/diskuse]
+type = custom/script
+exec = echo "Free space: $(df -h|awk '/ada/{print $4}')B"
+label-padding = 1
+format = <label>
+interval = 5.0
+format-foreground = ${colors.color15}
+label-background = ${colors.color6}
+format-padding = 0
+
+[module/ip]
+type = custom/script
+exec = echo "IP: $(ifconfig | awk '/ broadcast /{ print $2 }')"
+label-padding = 1
+format = <label>
+format-foreground = ${colors.color15}
+label-background = ${colors.color5}
+format-padding = 0
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %a %d %b 
+time = %H:%M
+label = %date% %time%
+label-padding = 1
+format = <label>
+format-foreground = ${colors.color15}
+label-background = ${colors.color4}
+format-padding = 0
+
+[module/pad0]
+type = custom/text
+content = ""
+content-background = ${colors.background}
+content-foreground = ${colors.color8}
+
+[module/pad1]
+type = custom/text
+content = ""
+content-background = ${colors.color8}
+content-foreground = ${colors.color10}
+
+[module/pad2]
+type = custom/text
+content = ""
+content-background = ${colors.color10}
+content-foreground = ${colors.color2}
+
+[module/pad3]
+type = custom/text
+content = ""
+content-background = ${colors.color2}
+content-foreground = ${colors.color14}
+
+[module/pad4]
+type = custom/text
+content = ""
+content-background = ${colors.color14}
+content-foreground = ${colors.color6}
+
+[module/pad5]
+type = custom/text
+content = ""
+content-background = ${colors.color6}
+content-foreground = ${colors.color13}
+
+[module/pad6]
+type = custom/text
+content = ""
+content-background = ${colors.color13}
+content-foreground = ${colors.color5}
+
+[module/pad7]
+type = custom/text
+content = ""
+content-background = ${colors.color5}
+content-foreground = ${colors.color12}
+
+[module/pad8]
+type = custom/text
+content = ""
+content-background = ${colors.color12}
+content-foreground = ${colors.color4}
