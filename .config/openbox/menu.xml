@@ -15,7 +15,7 @@
   </item>
   <item label="File Manager" icon="/usr/local/share/icons/Papirus-Dark/16x16/apps/xfce-filemanager.svg">
     <action name="Execute">
-      <command>pcmanfm /home/geir</command>
+      <command>pcmanfm</command>
       <startupnotify><enabled>yes></enabled></startupnotify>
     </action>
   </item>
