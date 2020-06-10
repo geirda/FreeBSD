@@ -1,5 +1,11 @@
-source ~/.config/mutt/color.muttrc
+source ~/.config/mutt/lscolor.muttrc
+
+set sort = threads
+set sort_aux = reverse-last-date-received
+#set sort_re
 
 #set sidebar_visible
-#set sidebar_width = 20
-#set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_width = 20
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_short_path
+bind index,pager B sidebar-toggle-visible
