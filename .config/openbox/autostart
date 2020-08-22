@@ -1,5 +1,5 @@
 # start compositor
-compton --config $HOME/.config/compton.conf &
+picom -b &
 
 # load wallpaper
 nitrogen --restore &

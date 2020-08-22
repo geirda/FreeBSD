@@ -203,27 +203,27 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="S-W-1">
       <action name="SendToDesktop">
-        <to>left</to>
+        <to>1</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="S-W-2">
       <action name="SendToDesktop">
-        <to>right</to>
+        <to>2</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
+    <keybind key="S-W-3">
       <action name="SendToDesktop">
-        <to>up</to>
+        <to>3</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Down">
+    <keybind key="S-W-4">
       <action name="SendToDesktop">
-        <to>down</to>
+        <to>4</to>
         <wrap>no</wrap>
       </action>
     </keybind>
@@ -247,11 +247,59 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-d">
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>6</x><y>9</y><height>1050</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>-6</x><y>9</y><height>1050</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>6</x><y>9</y><height>531</height><width>1908</width>
+      </action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>6</x><y>-9</y><height>531</height><width>1908</width>
+      </action>
+    </keybind>
+    <keybind key="S-W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>6</x><y>9</y><height>531</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="S-W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>-6</x><y>9</y><height>531</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="S-W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>6</x><y>-9</y><height>531</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="S-W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+	<x>-6</x><y>-9</y><height>531</height><width>951</width>
+      </action>
+    </keybind>
+    <keybind key="W-c">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-F4">
+    <keybind key="S-W-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -271,7 +319,7 @@
       <action name="Resize"/>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="A-Tab">
+    <keybind key="W-j">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
@@ -280,7 +328,7 @@
         </finalactions>
       </action>
     </keybind>
-    <keybind key="A-S-Tab">
+    <keybind key="W-k">
       <action name="PreviousWindow">
         <finalactions>
           <action name="Focus"/>
@@ -301,22 +349,22 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
+    <keybind key="W-d">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-a">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Up">
+    <keybind key="W-w">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Down">
+    <keybind key="W-s">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
@@ -331,7 +379,7 @@
 	<command>jgmenu.sh</command>
       </action>
     </keybind>
-    <keybind key="W-f">
+    <keybind key="W-space">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
